@@ -1,13 +1,10 @@
 CC = clang++
 CXXFLAGS = -std=c++17
 
-all: simple complete
+all: example
 
-simple: simple.o
-	$(CC) $(CXXFLAGS) -o simple.exe simple.o -pthread
-
-complete: complete.o
-	$(CC) $(CXXFLAGS) -o complete.exe complete.o -pthread
+example: example.o
+	$(CC) $(CXXFLAGS) -o example.exe example.o -pthread
 
 %.o: %.cpp %.h
 	$(CC) $(CXXFLAGS) -c $^

@@ -18,3 +18,5 @@ Uniqe_lock is slightly slower and takes up slightly more space than lock_guard. 
 - owns_lock
 - swap
 - release
+- (constructor)
+- (destructor)
