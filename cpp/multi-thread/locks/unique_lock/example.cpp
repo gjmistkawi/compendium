@@ -6,7 +6,7 @@
 
 std::mutex m;
 
-void owns(int i) {
+void func(int i) {
     std::chrono::milliseconds delay(100);
 
     std::unique_lock<std::mutex> lock(m, std::try_to_lock);
@@ -46,8 +46,8 @@ int main() {
         }
     }
 
-    std::thread t1(owns, 1);
-    std::thread t2(owns, 2);
+    std::thread t1(func, 1);
+    std::thread t2(func, 2);
 
     t1.join();
     t2.join();
